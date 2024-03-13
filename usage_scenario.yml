@@ -20,6 +20,6 @@ flow:
     container: Small_load_Container
     commands:
       - type: console
-        command: python3 /var/www/app.py
+        command: python3 /var/www/flask-api/app.py
         detach: true
         note: Running app
