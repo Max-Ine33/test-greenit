@@ -1,0 +1,18 @@
+version: "3"
+
+networks:
+  pipeline:
+    external: false
+    name: pipeline
+
+services:
+      
+  flask-api:
+    build: ./flask-api
+    ports:
+      - "8083:5000"
+    volumes:
+      - ./flask-api/data:/data
+    networks:
+      - pipeline
+

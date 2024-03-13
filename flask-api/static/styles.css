@@ -1,0 +1,61 @@
+body {
+    font-family: monospace;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    overflow: hidden; /* Prevent scrollbars */
+    background-image: url('cake.png');
+    background-size: cover;
+    background-attachment: fixed; /* Fix background in place */
+    background-position: center;
+    position: relative; /* Ensure body is positioned relatively */
+}
+h1 {
+    color: rgb(0, 0, 0);
+}
+
+#terminal {
+    width: 525px; /* Fixed width */
+    height: 390px; /* Fixed height */
+    border: 1px solid #ccc;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #00d10a;
+    overflow-y: auto;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 50px;
+    position: absolute; /* Position terminal absolutely */
+    top: 400%; /* Align terminal to the vertical center */
+    left: 50%; /* Align terminal to the horizontal center */
+    transform: translate(-50%, -50%); /* Center terminal */
+}
+
+textarea.input {
+    width: calc(100% - 22px); /* Adjusted width */
+    padding: 8px; /* Adjusted padding */
+    font-family: monospace;
+    font-size: 18px;
+    display: block;
+    border: none;
+    background-color: transparent;
+    color: #00d10a;
+    outline: none;
+    position: relative; /* Position textarea field absolutely */
+    top: 470px;
+    bottom: 20px; /* Adjust distance from the bottom */
+    left: 81%; /* Align textarea to the horizontal center */
+    transform: translateX(-50%); /* Center textarea horizontally */
+}
+
+.popup {
+    position: fixed;
+    bottom: 10px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    z-index: 9999;
+}
