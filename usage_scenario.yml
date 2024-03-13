@@ -10,16 +10,16 @@ services:
     ports:
       - 8083:5000
     setup-commands:
-      - mkdir test
-      - cd test
-      - cp -R /tmp/repo/flask-api .
-      - cd flask-api
+      - mkdir /var/www
+      - cp -R /tmp/repo /var/www/
+      - pip install --upgrade pip
+      - pip install flask gevent gevent-websocket flask-socketio pexpect regex
 
 flow:
   - name: Launching app
     container: Small_load_Container
     commands:
       - type: console
-        command: python3 app.py
+        command: python3 /var/www/app.py
         detach: true
         note: Running app
