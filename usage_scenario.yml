@@ -1,0 +1,25 @@
+---
+name: Poc-test
+author: greenit-centrale
+version: 1
+description: Defined test scenario for used in Green Coding Berlin automated tests.
+
+services:
+  Small_load_Container:
+    image: python:3.10-slim
+    ports:
+      - 8083:5000
+    setup-commands:
+      - mkdir test
+      - cd test
+      - cp -R /tmp/repo/flask-api .
+      - cd flask-api
+
+flow:
+  - name: Launching app
+    container: Small_load_Container
+    commands:
+      - type: console
+        command: python3 app.py
+        detach: true
+        note: Running app
