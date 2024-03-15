@@ -6,11 +6,14 @@
         <title>Web Terminal</title>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
     </head>
-    <body>
-        <h1>Web Terminal</h1>
-        <div id="terminal">
-            <div id="prompt"></div>
-        </div>
+<body>
+    <h1>Web Terminal</h1>
+    <div id="terminal">
+        <div id="prompt"></div>
+    </div>
+    <div>
+        <input type="text" id="commandInput" placeholder="Enter command" onpaste="limitPasteLength(event)" rows="1" oninput="limitCharactersPerLine(event)">
+    </div>
         <div>
             <textarea class="input" id="commandInput" placeholder="Enter command" onpaste="limitPasteLength(event)" rows="1" oninput="limitCharactersPerLine(event)"></textarea>
             <!-- <input type="text" id="commandInput" placeholder="Enter command" onpaste="limitPasteLength(event)" rows="1" oninput="limitCharactersPerLine(event)"> -->
